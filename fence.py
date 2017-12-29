@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 def fence(s):
     i = 0
     result = ''
