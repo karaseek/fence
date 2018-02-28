@@ -5,7 +5,6 @@ from fence import fence
 from reverse import reverse
 import config
 
-
 bot = telebot.TeleBot(config.TOKEN)
 
 
