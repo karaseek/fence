@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 def reverse(s):
     if len(s) == 0:
         pass

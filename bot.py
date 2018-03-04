@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import telebot
-from fence import fence
-from reverse import reverse
-import config
+from corrupt import reverse, fence
+from config import config
+
 
 bot = telebot.TeleBot(config.TOKEN)
 
@@ -21,8 +21,8 @@ def help_me(message):
 @bot.inline_handler(func=lambda query: len(query.query) > 0)
 def corrupt_text(query):
     try:
-        fence_result = fence(query.query)
-        reverse_result = reverse(query.query)
+        fence_result = fence.fence(query.query)
+        reverse_result = reverse.reverse(query.query)
         r1 = telebot.types.InlineQueryResultArticle('1', fence_result, telebot.types.InputTextMessageContent(fence_result))
         r2 = telebot.types.InlineQueryResultArticle('2', reverse_result, telebot.types.InputTextMessageContent(reverse_result))
         bot.answer_inline_query(query.id, [r1, r2])

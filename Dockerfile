@@ -4,6 +4,10 @@ WORKDIR /usr/src/textcorrupt
 
 RUN pip install pyTelegramBotAPI
 
-COPY src .
+COPY bot.py .
+
+COPY config ./config
+
+COPY corrupt ./corrupt
 
 CMD ["python", "bot.py"]
